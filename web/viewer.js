@@ -1522,9 +1522,9 @@ var PDFViewerApplication = {
       }).then(function (_ref4) {
         var hash = _ref4.hash,
             sidebarView = _ref4.sidebarView;
-
+        //默认不打开目录
         _this6.setInitialView(hash, {
-          sidebarView: sidebarView,
+          // sidebarView: sidebarView,
           scale: scale
         });
         initialParams.hash = hash;
@@ -9964,8 +9964,8 @@ var ViewHistory = function () {
       var _this2 = this;
 
       return new Promise(function (resolve) {
-        var databaseStr = JSON.stringify(_this2.database);
-        localStorage.setItem('pdfjs.history', databaseStr);
+        // var databaseStr = JSON.stringify(_this2.database);
+        // localStorage.setItem('pdfjs.history', databaseStr);
         resolve();
       });
     }
