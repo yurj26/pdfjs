@@ -1605,18 +1605,19 @@ var PDFViewerApplication = {
       _this6.metadata = metadata;
       console.log('PDF ' + pdfDocument.fingerprint + ' [' + info.PDFFormatVersion + ' ' + (info.Producer || '-').trim() + ' / ' + (info.Creator || '-').trim() + ']' + ' (PDF.js: ' + (_pdfjsLib.version || '-') + (!_pdfjsLib.PDFJS.disableWebGL ? ' [WebGL]' : '') + ')');
       var pdfTitle = void 0;
-      if (metadata && metadata.has('dc:title')) {
-        var title = metadata.get('dc:title');
-        if (title !== 'Untitled') {
-          pdfTitle = title;
-        }
-      }
-      if (!pdfTitle && info && info['Title']) {
-        pdfTitle = info['Title'];
-      }
-      if (pdfTitle) {
-        _this6.setTitle(pdfTitle + ' - ' + document.title);
-      }
+      // if (metadata && metadata.has('dc:title')) {
+      //   var title = metadata.get('dc:title');
+      //   if (title !== 'Untitled') {
+      //     pdfTitle = title;
+      //   }
+      // }
+
+      // if (!pdfTitle && info && info['Title']) {
+      //   pdfTitle = info['Title'];
+      // }
+      // if (pdfTitle) {
+      //   _this6.setTitle(pdfTitle + ' - ' + document.title);
+      // }
       if (info.IsAcroFormPresent) {
         console.warn('Warning: AcroForm/XFA is not supported');
         _this6.fallback(_pdfjsLib.UNSUPPORTED_FEATURES.forms);
