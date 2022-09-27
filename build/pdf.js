@@ -6442,7 +6442,7 @@ PDFNetworkStreamFullRequestReader.prototype = {
     }
     var fullRequestXhrId = this._fullRequestId;
     var fullRequestXhr = networkManager.getRequestXhr(fullRequestXhrId);
-    if (fullRequestXhr.getResponseHeader('Accept-Ranges') !== 'bytes') {
+    if (fullRequestXhr.getAllResponseHeaders('Accept-Ranges') !== 'bytes') {
       return false;
     }
     var contentEncoding = fullRequestXhr.getResponseHeader('Content-Encoding') || 'identity';
